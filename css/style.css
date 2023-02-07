@@ -1,0 +1,334 @@
+/*popup*/
+.subPlaces {
+    zoom: 137.5%;
+}
+
+
+/*discription section*/
+.discription {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin: 3rem 0 3rem 0;
+}
+
+.leftImg {
+    width: 80%;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px 30px;
+    margin-top: 2rem;
+}
+
+.leftImg .left {
+    overflow: hidden;
+}
+
+.leftImg .left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.leftImg .left i {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.leftImg .right {
+    display: flex;
+    align-items: center;
+    place-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+}
+
+.leftImg .right .rightContent {
+    padding-left: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.leftImg .right .rightContent p h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.leftImg .right .rightContent p .icon {
+    vertical-align: center;
+    font-size: 16px;
+    color: #2c3e50;
+    margin-right: 10px;
+}
+
+.leftImg .right .rightContent .container {
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 17px;
+}
+
+@media (max-width: 768px) {
+    .leftImg {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .leftImg .left i {
+        width: 100%;
+        height: 500;
+    }
+}
+
+@media (max-width: 991px) {
+    .leftImg .right .rightContent {
+        padding-left: 0;
+    }
+}
+
+
+
+.leftImg i:before,
+.leftImg i:after {
+    content: '⥪';
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    z-index: 2;
+    width: 2rem;
+    height: 2rem;
+    background: dodgerblue;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.leftImg i:after {
+    content: '⥭';
+    left: auto;
+    right: 1rem;
+}
+
+/* I haven't found a way for IE and Edge to let me style inputs that way */
+.leftImg input {
+    appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: translateX(100%);
+    transition: transform ease-in-out 400ms;
+    z-index: 1;
+}
+
+.leftImg input:focus {
+    outline: none;
+}
+
+.leftImg input:after {
+    content: attr(title);
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: .5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.leftImg input:not(checked):before {
+    content: '';
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    top: 50%;
+    left: calc(-100% + 1rem);
+}
+
+.leftImg input:checked:before {
+    display: none;
+    left: 1rem;
+}
+
+.leftImg input:checked {
+    transform: translateX(0);
+    pointer-events: none;
+    z-index: 0;
+    box-shadow: -5px 10px 20px -15px rgba(0, 0, 0, 1);
+}
+
+.leftImg input:checked+input:before {
+    left: -3rem;
+}
+
+.leftImg input:checked+input~input:before {
+    display: none;
+}
+
+
+
+
+
+
+
+.teamContainer {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.section-title {
+    width: 100%;
+    padding: 0 15px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title h2 {
+    font-size: 35px;
+    text-transform: capitalize;
+    color: #222222;
+    font-weight: 700;
+}
+
+.section-title h2 span {
+    color: #e03c62;
+}
+
+.teamRow {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.teamRow img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 4/5;
+}
+
+/*team section*/
+.team {
+    background-color: #f9e9ed;
+    min-height: 100vh;
+    padding: 80px 0;
+}
+
+.team-item {
+    width: calc((100% / 3) - 30px);
+    margin: 0 15px 30px;
+    position: relative;
+    transition: box-shadow 0.5s ease;
+}
+
+.team-item:hover {
+    box-shadow: 0 0 15px #b7a6ce;
+}
+
+.team-item img {
+    width: calc(100% - 60px);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.5s ease;
+}
+
+.team-item:hover img {
+    transform: translateX(60px);
+}
+
+.team-item h3 {
+    position: absolute;
+    background-color: #f9e9ed;
+    right: 0;
+    bottom: 15px;
+    padding: 2px 10px;
+    border-radius: 4px;
+    color: #222222;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: capitalize;
+    z-index: 2;
+    transition: right 0.5s ease;
+    margin-left: 75px;
+}
+
+.team-item:hover h3 {
+    right: 15px;
+}
+
+.team-item h3 span {
+    display: block;
+    font-size: 16px;
+    font-weight: 400;
+    color: #555555;
+}
+
+.team-item .social-links {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.team-item:hover .social-links {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+.team-item .social-links a {
+    display: block;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    font-size: 16px;
+    color: #777777;
+    border: 1px solid #777777;
+    border-radius: 50%;
+    margin: 3px 0;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.team-item .social-links a:hover {
+    color: #e03c62;
+    border-color: #e03c62;
+}
+
+/*responsive*/
+@media(max-width: 991px) {
+    .team-item {
+        width: calc(50% - 30px);
+    }
+}
+
+@media(max-width: 575px) {
+    .team-item {
+        width: calc(100% - 30px);
+    }
+}
